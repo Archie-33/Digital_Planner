@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.main-bg{
+  background-color: #eee;
+}
+
+.top-card{
+  height : 35vh;
+}
+.bottom-card{
+  height: 48vh;
+}

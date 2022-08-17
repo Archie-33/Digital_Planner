@@ -1,28 +1,14 @@
 const express = require('express');
-const { createServer } = require("http");
-const { Server } = require("socket.io");
 
 //initializing express app
 const app = express();
-const httpServer = createServer(app);
-const io = new Server(httpServer, { cors : { origin : ['http://localhost:3000'] } });
 
-io.on("connection", (socket) => {
-  console.log("a client connected");
-
-//   receiving an event from client
-    socket.on('sendmsg', ( data ) => {
-        console.log(data);
-    })
-
-});
 
 const port = 5000;
 
 const userRouter = require('./routers/userRouter');
-const productRouter = require('./routers/productRouter');
+const planRouter = require('./routers/planRouter');
 const cors = require('cors');
-const { log } = require('console');
 
 // middleware
 
@@ -32,8 +18,8 @@ app.use(express.json());
 // for allowing frontend to access backend
 app.use( cors({ origin : ['http://localhost:3000'] }) );
 
-app.use('/product', productRouter);
-app.use('/user', userRouter);
+app.use('/plan', planRouter);
+app.use('/plan', userRouter);
 
 app.get('/add', (req, res) => {
     res.send('Response from Express!');
@@ -44,4 +30,4 @@ app.get('/home', (req, res) => {
 });
 
 // starting the server
-httpServer.listen(port, () => console.log('server started'));
+app.listen(port, () => console.log('server started'));
