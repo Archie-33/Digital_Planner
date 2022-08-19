@@ -6,6 +6,7 @@ const schemaObject =  new Schema({
     age : Number,
     email : String,
     password : String,
+    notes : {type : String, default : ''},
 })
 
 module.exports = model('users', schemaObject);

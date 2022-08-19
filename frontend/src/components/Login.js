@@ -29,11 +29,11 @@ const Login = () => {
                 title : 'Login Successful',
                 text : 'You are now logged in'
             })
-            res.json(data => {
+            res.json().then(data => {
                 console.log(data);
                 sessionStorage.setItem('user', JSON.stringify(data));
                 navigate('/dashboard');
-            } )
+            })
         }else if(res.status === 400){
             Swal.fire({
                 icon : 'error',

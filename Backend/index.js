@@ -19,7 +19,7 @@ app.use(express.json());
 app.use( cors({ origin : ['http://localhost:3000'] }) );
 
 app.use('/plan', planRouter);
-app.use('/plan', userRouter);
+app.use('/user', userRouter);
 
 app.get('/add', (req, res) => {
     res.send('Response from Express!');

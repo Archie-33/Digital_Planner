@@ -7,8 +7,11 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Notfound from "./components/Notfound"
 import Dashboard from "./components/Dashboard"
+import TimeAgo from 'javascript-time-ago'
+import en from 'javascript-time-ago/locale/en'
 
 function App() {
+  TimeAgo.addDefaultLocale(en);
   return (
     <div>
       <BrowserRouter>
