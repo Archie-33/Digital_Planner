@@ -65,6 +65,27 @@ router.delete('/delete/:id', (req, res) => {
     });
 });
 
+router.post('/authenticate', (req, res) => {
+    const formdata = req.body;
+    Model.findOne({email : formdata.email, password : formdata.password})
+    .then((result) => {
+        console.log(result);
+        
+        // if condition will be true if user is found
+        if(result){
+            console.log('login success');
+            res.json(result);
+        }else{
+            console.log('Login Failed');
+            res.status(400).json({status : 'Login Failed'});
+        }
+
+    }).catch((err) => {
+        console.error(err);
+        res.status(500).json(err);
+    });
+})
+
 
 router.put('/update/:id', (req, res) => {
     Model.findByIdAndUpdate(req.params.id, req.body, {new : true})
