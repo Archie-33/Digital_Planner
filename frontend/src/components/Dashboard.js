@@ -156,7 +156,20 @@ const Dashboard = () => {
                   <h4 className="m-0">Important Reminders</h4>
                   
                 </div>
-                <div className="card-body"></div>
+                <div className="card-body">
+                <div className="input-group">
+                        <input onChange={e => setPlanText(e.target.value)} type="text" className="form-control" />
+                        <button onClick={addPlan} className="btn btn-primary"> <i class="fas fa-plus    "></i> </button>
+                    </div>
+                    <div style={{height : '12rem', overflow: 'auto'}}>
+                    <ul className="list-group mt-3">
+                        { planArray.map(plan => <li className="list-group-item d-flex justify-content-between">
+                        <p className="m-0 fw-bold">{plan.title}</p>
+                            <p className="m-0">{timeAgo.format(new Date(plan.createdAt))}</p>
+                            </li>) }
+                    </ul>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
