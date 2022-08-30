@@ -21,10 +21,12 @@ const Dashboard = () => {
 
   const url = "http://localhost:5000"
   const [planText, setPlanText] = useState("")
+  const [reminderText, setReminderText] = useState("")
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")))
   const [noteText, setNoteText] = useState(currentUser.notes)
 
   const [planArray, setPlanArray] = useState([])
+  const [reminderArray, setReminderArray] = useState([])
 
   const timeAgo = new TimeAgo("en-US")
 
@@ -41,6 +43,21 @@ const Dashboard = () => {
       }),
     }).then((res) => {
       fetchPlans()
+    })
+  }
+  const addReminder = () => {
+    fetch("http://localhost:5000/reminder/add", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: reminderText,
+        createdBy: currentUser._id,
+        createdAt: new Date(),
+      }),
+    }).then((res) => {
+      fetchReminder()
     })
   }
 
@@ -66,6 +83,14 @@ const Dashboard = () => {
         setPlanArray(data)
       })
   }
+  const fetchReminder = () => {
+    fetch(url + "/reminder/getall")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        setReminderArray(data)
+      })
+  }
 
   const refreshUser = () => {
     fetch(url + "/user/getbyid/" + currentUser._id)
@@ -89,6 +114,14 @@ const Dashboard = () => {
         fetchPlans();
       })
   }
+  const deleteReminder = (id) => {
+    fetch(url + "/reminder/delete/" + id, {method : 'DELETE'})
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        fetchReminder();
+      })
+  }
 
   return (
     <div className="main-bg p-4">
@@ -105,11 +138,11 @@ const Dashboard = () => {
                 {" "}
                 <i class="fas fa-home"></i> Home
               </button>
-              <button className="btn btn-outline-primary w-100">
+              <button className="btn btn-outline-primary w-100 mt-3">
                 {" "}
                 <i></i> Account
               </button>
-              <button className="btn btn-outline-primary w-100">
+              <button className="btn btn-outline-primary w-100 mt-3">
                 {" "}
                 <i></i> Settings
               </button>
@@ -200,18 +233,21 @@ const Dashboard = () => {
                 </div>
                 <div className="card-body">
                   <div className="input-group">
-                    <input onChange={(e) => setPlanText(e.target.value)} type="text" className="form-control" />
-                    <button onClick={addPlan} className="btn btn-primary">
+                    <input onChange={(e) => setReminderText(e.target.value)} type="text" className="form-control" />
+                    <button onClick={addReminder} className="btn btn-primary">
                       {" "}
                       <i class="fas fa-plus    "></i>{" "}
                     </button>
                   </div>
                   <div style={{ height: "12rem", overflow: "auto" }}>
                     <ul className="list-group mt-3">
-                      {planArray.map((plan) => (
+                      {reminderArray.map((reminder) => (
                         <li className="list-group-item d-flex justify-content-between">
-                          <p className="m-0 fw-bold">{plan.title}</p>
-                          <p className="m-0">{timeAgo.format(new Date(plan.createdAt))}</p>
+                          <p className="m-0 fw-bold">{reminder.title}</p>
+                          <p className="m-0">{timeAgo.format(new Date(reminder.createdAt))}
+                          &nbsp;&nbsp;&nbsp;<i class="fas fa-trash text-danger" 
+                            onClick={e => deleteReminder(reminder._id)}></i>
+                          </p>
                         </li>
                       ))}
                     </ul>
