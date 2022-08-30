@@ -87,6 +87,14 @@ const Dashboard = () => {
                 {" "}
                 <i class="fas fa-home"></i> Home
               </button>
+              <button className="btn btn-outline-primary w-100">
+                {" "}
+                <i></i> Account
+              </button>
+              <button className="btn btn-outline-primary w-100">
+                {" "}
+                <i></i> Settings
+              </button>
             </div>
           </div>
         </div>
@@ -146,6 +154,7 @@ const Dashboard = () => {
               <div className="card bottom-card">
                 <div className="card-header">
                   <h4 className="m-0">Important Reminders</h4>
+                  
                 </div>
                 <div className="card-body"></div>
               </div>
