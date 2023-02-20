@@ -194,7 +194,6 @@ const Dashboard = () => {
                       openTo="day"
                       label="Select Date"
                       value={value}
-                      shouldDisableDate={isWeekend}
                       onChange={(newValue) => {
                         setValue(newValue)
                       }}
@@ -221,7 +220,7 @@ const Dashboard = () => {
               </div>
               <div className="card mt-4">
                 <div className="card-body">
-                  <h3 className="m-0">Quote of the Day</h3>
+                  <h3 className="m-0">Quote for the Day</h3>
                   <h5>{quotes[Math.floor(Math.random() * quotes.length)]}</h5>
                 </div>
               </div>
