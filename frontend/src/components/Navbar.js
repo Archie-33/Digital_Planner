@@ -40,7 +40,11 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
                 Dashboard
               </NavLink>
             </li>
-           
+            <li class="nav-item">
+              <NavLink className="nav-link" to="/signup">
+                Sign Up
+              </NavLink>
+            </li>
           </ul>
         </div>
 

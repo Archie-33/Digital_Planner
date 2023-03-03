@@ -6,6 +6,12 @@ const Dashboard = () => {
     const quotes = [
         "You can do anything, but not everything.",
         "Perfection is not attainable, but if we chase perfection we can catch excellence.",
+        "Don't be pushed around by the fears in your mind. Be led by the dreams in your heart.",
+        "Instead of worrying about what you cannot control, shift your energy to what you can create.",
+        "Be the reason someone smiles. Be the reason someone feels loved and believes in the goodness in people.",
+        "Be mindful. Be grateful. Be positive. Be true. Be kind.",
+        "Accept yourself, love yourself, and keep moving forward. If you want to fly, you have to give up what weighs you down.",
+
     ]
 
   const url = "http://localhost:5000";
