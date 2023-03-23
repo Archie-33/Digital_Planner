@@ -1,92 +1,58 @@
-import TimeAgo from "javascript-time-ago"
 import React, { useEffect, useState } from "react"
-import dayjs, { Dayjs } from "dayjs"
-import TextField from "@mui/material/TextField"
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider"
-import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker"
-import { DayPicker } from "@mui/x-date-pickers/internals"
-
-
-const isWeekend = (date) => {
-  const day = date.day()
-
-  return day === 0 || day === 6
-}
 
 const Temp1_MP = () => {
     
-  const [value, setValue] = React.useState(dayjs())
- 
   
-  
-
   const url = "http://localhost:5000"
-  const [planText, setPlanText] = useState("")
-  const [reminderText, setReminderText] = useState("")
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")))
-  const [noteText, setNoteText1] = useState(currentUser.notes)
+  const [meal, setMeal] = useState("");
+  const [dishName, setdishName] = useState("");
+  const [recipe, setrecipe] = useState("");
+  const [ingredients, setingredients] = useState("");
+  
+  const [mealList, setMealList] = useState([])
 
-  const [planArray, setPlanArray] = useState([])
-  const [reminderArray, setReminderArray] = useState([])
-
-  const timeAgo = new TimeAgo("en-US")
-
-  const addPlan = () => {
-    fetch("http://localhost:5000/plan/add", {
+ 
+  const addToList = () => {
+    fetch("http://localhost:5000/meal/insert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        title: planText,
-        createdBy: currentUser._id,
-        createdAt: new Date(),
+        meal: meal,
+        dishName: dishName,
+        recipe: recipe,
+        ingredients: ingredients,
       }),
-    }).then((res1) => {
-      fetchPlans()
+    }).then((res) => {
+      fetchMeals()
     })
-  }
- 
-  const updateNote1 = () => {
-    fetch("http://localhost:5000/user/update/" + currentUser._id, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        notes: noteText,
-      }),
-    }).then((res1) => {
-      refreshUser()
-    })
-  }
-
-  const fetchPlans = () => {
-    fetch(url + "/plan/getall")
-      .then((res1) => res1.json())
+        
+  };
+  const fetchMeals = () => {
+    fetch(url + "/meal/getall")
+      .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        setPlanArray(data)
+        setMealList(data)
+      })
+  }
+  const deleteMeal = (id) => {
+    fetch(url + "/meal/delete/" + id, {method : 'DELETE'})
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        fetchMeals();
       })
   }
  
-  const refreshUser = () => {
-    fetch(url + "/user/getbyid/" + currentUser._id)
-      .then((res1) => res1.json())
-      .then((data) => {
-        console.log(data)
-        setCurrentUser(data)
-        sessionStorage.setItem("user", JSON.stringify(data))
-      })
-  }
-
+ 
   useEffect(() => {
-    fetchPlans()
+    fetchMeals()
   }, [])
 
 
-  
   
   return (
     
@@ -135,26 +101,94 @@ const Temp1_MP = () => {
                 </a>
               </button>
               </div>
+              
           </div>
         </div>
         <div className="col-md-10">
-        <div className="row mt-4">
-            <div className="col-md-8">
-              <div className="card bottom-card">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="card top-card">
                 <div className="card-header">
-                  <h4 className="m-0">Notes</h4>
+                  <h4 className="m-0">MEAL PLANNER</h4>
+                  </div>
+                  <div className="card-header">
+                  <h4 className="m-2">
+                    <label>Meal for the Day :</label>
+                    <input type="text" placeholder="Enter meal" onChange={(event) => {setMeal(event.target.value);}}/>
+                    </h4>
+                    <h4 className="m-2">
+                    <label>Name of the Dish :</label>
+                    <input type="text" placeholder="Dish name" onChange={(event) => {setdishName(event.target.value);}}/>
+                    </h4>
+                    <h4 className="m-2">
+                    <label>Recipe of the Dish :</label>
+                    <input type="text" placeholder="Enter recipe" onChange={(event) => {setrecipe(event.target.value);}}/>
+                    </h4>
+                    <h4 className="m-2">
+                    <label>Main Ingredients :</label>
+                    <input type="text" placeholder="Enter ingredients" onChange={(event) => {setingredients(event.target.value);}}/>
+                    <button className="btn btn-outline-primary w-100 mt-3" onClick={addToList}>Add to List</button>
+                  </h4>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+            <div className="row-mt-4">
+              <div className="col-md-12">
+              <div className="card bottom-card1">
+                <div className="card-header">
+                  <h4 className="m-0">MEAL LIST</h4>
                 </div>
-                <div className="card-body">
-                  <textarea value={noteText} onChange={(e) => setNoteText1(e.target.value)} className="form-control" rows="8"></textarea>
-                  <button className="btn btn-primary float-end mt-3" onClick={updateNote1}>
-                    {" "}
-                    <i class="fas fa-pen    "></i>{" "}
-                  </button>
+                <table border={1} width="100%" cellPadding={10}>
+                  <tbody>
+                  <tr>
+                    <th>Meal</th>
+                    <th>Dish Name</th>
+                    <th>Recipe</th>
+                    <th>Ingredients</th>
+                    <th>Actions</th>
+                  </tr>
+                  {/* {mealList.map((val,key) => {
+                    return <div key={key}>
+                      <td>
+                        <tr>
+                      <h4>{val.meal}</h4>
+                      </tr>
+                      <tr>
+                      <h4>{val.dishName}</h4>
+                      </tr>
+                      <tr>
+                      <h4>{val.recipe}</h4>
+                      </tr>
+                      <tr>
+                      <h4>{val.ingredients}</h4>
+                      </tr>
+                      </td>
+                      </div>
+                  })} */}
+                  {mealList.map((val,key) => {
+                    return(
+                      <tr key={key}>
+                        <td><h4>{val.meal}</h4></td>
+                        <td><h4>{val.dishName}</h4></td>
+                        <td><h4>{val.recipe}</h4></td>
+                        <td><h4>{val.ingredients}</h4></td>
+                        <td><button className="btn btn-outline-primary w-30 mt-2" onClick={() => deleteMeal(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
+                        </td>
+                      </tr>
+                    )
+                  })
+
+                  }
+                  </tbody>
+                </table>
+              
                 </div>
               </div>
-              </div>
-        </div>
-      </div>
+            </div>
+
+        
  </div>
  </div>
         

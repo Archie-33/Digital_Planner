@@ -1,9 +1,21 @@
-const {Schema, model, Types} = require('../connection');
+const {Schema, model} = require('../connection');
 
-const schemaObject =  new Schema({
-    title : String,
-    createdBy : {type : Types.ObjectId, ref : 'users'},
-    createdAt : Date,
+const MealSchema = new Schema ({
+    meal: {
+        type: String,
+        required: true,
+    },
+    dishName: {
+        type: String
+    },
+    recipe: {
+        type: String
+    },
+    ingredients: {
+        type: String,
+        required: true,
+    },
 })
 
-module.exports = model('meals', schemaObject);
+const mealModel = model("mealModel", MealSchema);
+module.exports = mealModel;

@@ -1,36 +1,15 @@
+// for performing user database operations
 const express = require('express');
 const router = express.Router();
 
-const Model = require('../models/mealModel');
+// importing user model
+const Model = require('../models/reminderModel.js');
 
-
-// router.post("/insert1", async(req,res) => {
-    // const meal=req.body.meal
-    // const dishName=req.body.dishName
-    // const recipe=req.body.recipe
-    // const ingredients=req.body.ingredients
-      
-    // const mealPlanner=new Model({meal: meal, dishName: dishName, recipe: recipe, ingredients: ingredients});
-
-//     try{
-//          await mealPlanner.save();
-//          res.send("inserted data");
-//     }catch(err) {
-//         console.log(err)
-//     }
-// });
-
-router.post('/insert', (req, res) => {
-    // console.log(req.body);
-    const meal=req.body.meal
-    const dishName=req.body.dishName
-    const recipe=req.body.recipe
-    const ingredients=req.body.ingredients
-      
-    const mealPlanner=new Model({meal: meal, dishName: dishName, recipe: recipe, ingredients: ingredients});
+router.post('/add', (req, res) => {
+    console.log(req.body);
     
     // async function
-    new Model(mealPlanner).save()
+    new Model(req.body).save()
     .then((data) => {
         console.log(data);
         res.json(data); //default status code is 200
@@ -51,15 +30,7 @@ router.get('/getall', (req, res) => {
     });
 })
 
-router.get("/read", async(req,res) => {
-    Model.find({}, (err,result) => {
-        if(err){
-            res.send(err)
-        }
-        res.send(result);
-    })
-});
-
+// ':' denotes a parameter
 router.get('/getbyemail/:email', (req, res) => {
     const email = req.params.email;
     console.log(email);
@@ -82,6 +53,7 @@ router.get('/getbyid/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
 router.delete('/delete/:id', (req, res) => {
     
     Model.findByIdAndDelete(req.params.id)
@@ -92,6 +64,8 @@ router.delete('/delete/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+
 router.put('/update/:id', (req, res) => {
     Model.findByIdAndUpdate(req.params.id, req.body, {new : true})
     .then((result) => {
@@ -101,6 +75,5 @@ router.put('/update/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
-
 
 module.exports = router;

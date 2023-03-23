@@ -8,6 +8,9 @@ const port = 5000;
 
 const userRouter = require('./routers/userRouter');
 const planRouter = require('./routers/planRouter');
+const mealRouter = require('./routers/mealRouter');
+const reminderRouter = require('./routers/reminderRouter');
+
 const cors = require('cors');
 
 // middleware
@@ -20,6 +23,9 @@ app.use( cors({ origin : ['http://localhost:3000'] }) );
 
 app.use('/plan', planRouter);
 app.use('/user', userRouter);
+app.use('/meal', mealRouter);
+app.use('/reminder', reminderRouter);
+
 
 app.get('/add', (req, res) => {
     res.send('Response from Express!');

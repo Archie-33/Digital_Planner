@@ -109,6 +109,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchPlans()
+    fetchReminder()
   }, [])
 
   const deleteTodo = (id) => {
@@ -189,7 +190,7 @@ const Dashboard = () => {
                 <div className="card-body">
                   <div className="input-group">
                     <input onChange={(e) => setPlanText(e.target.value)} type="text" className="form-control" />
-                    <button onClick={addPlan} className="btn btn-primary">
+                    <button onClick={addPlan} className="btn btn-secondary">
                       {" "}
                       <i class="fas fa-plus    "></i>{" "}
                     </button>
@@ -241,7 +242,7 @@ const Dashboard = () => {
                 </div>
                 <div className="card-body">
                   <textarea value={noteText} onChange={(e) => setNoteText(e.target.value)} className="form-control" rows="8"></textarea>
-                  <button className="btn btn-primary float-end mt-3" onClick={updateNote}>
+                  <button className="btn btn-secondary float-end mt-3" onClick={updateNote}>
                     {" "}
                     <i class="fas fa-pen    "></i>{" "}
                   </button>
@@ -262,7 +263,7 @@ const Dashboard = () => {
                 <div className="card-body">
                   <div className="input-group">
                     <input onChange={(e) => setReminderText(e.target.value)} type="text" className="form-control" />
-                    <button onClick={addReminder} className="btn btn-primary">
+                    <button onClick={addReminder} className="btn btn-secondary">
                       {" "}
                       <i class="fas fa-plus    "></i>{" "}
                     </button>
