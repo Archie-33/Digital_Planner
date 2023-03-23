@@ -27,7 +27,7 @@ const Login = () => {
             Swal.fire({
                 icon : 'success',
                 title : 'Login Successful',
-                text : 'You are now logged in'
+                text : 'Greetings! you are now logged in'
             })
             res.json().then(data => {
                 console.log(data);

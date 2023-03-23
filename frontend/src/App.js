@@ -7,6 +7,7 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import Notfound from "./components/Notfound"
 import Dashboard from "./components/Dashboard"
+import Temp1_MP from "./components/Temp1_MP"
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 
@@ -23,6 +24,8 @@ function App() {
           <Route element={<Login></Login>} path="login" />
           <Route element={<Signup />} path="signup" />
           <Route element={<Dashboard />} path="dashboard" />
+          <Route element={<Temp1_MP />} path="temp1_MP" />
+
 
 
           <Route element={<Notfound />} path="*" />
