@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 // importing user model
-const Model = require('../models/reminderModel.js');
+const Model = require('../models/reminderModel');
 
 router.post('/add', (req, res) => {
     console.log(req.body);

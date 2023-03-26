@@ -1,39 +1,28 @@
-import TimeAgo from "javascript-time-ago"
+import TimeAgo from "javascript-time-ago";
 import React, { useEffect, useState } from "react"
-import dayjs, { Dayjs } from "dayjs"
+import dayjs from "dayjs"
 import TextField from "@mui/material/TextField"
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs"
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider"
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker"
-import { DayPicker } from "@mui/x-date-pickers/internals"
-
-
-const isWeekend = (date) => {
-  const day = date.day()
-
-  return day === 0 || day === 6
-}
 
 const Dashboard = () => {
-    
   const [value, setValue] = React.useState(dayjs())
-  const quotes = [
-    "You can do anything, but not everything.",
-    "Perfection is not attainable, but if we chase perfection we can catch excellence.",
-  ]
-  
-  
+    const quotes = [
+        "You can do anything, but not everything.",
+        "Perfection is not attainable, but if we chase perfection we can catch excellence.",
+    ]
 
-  const url = "http://localhost:5000"
-  const [planText, setPlanText] = useState("")
+  const url = "http://localhost:5000";
+  const [planText, setPlanText] = useState("");
   const [reminderText, setReminderText] = useState("")
-  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")))
-  const [noteText, setNoteText] = useState(currentUser.notes)
+  const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+  const [noteText, setNoteText] = useState(currentUser.notes);
 
-  const [planArray, setPlanArray] = useState([])
+  const [planArray, setPlanArray] = useState([]);
   const [reminderArray, setReminderArray] = useState([])
 
-  const timeAgo = new TimeAgo("en-US")
+  const timeAgo = new TimeAgo('en-US')
 
   const addPlan = () => {
     fetch("http://localhost:5000/plan/add", {
@@ -67,7 +56,7 @@ const Dashboard = () => {
   }
 
   const updateNote = () => {
-    fetch("http://localhost:5000/user/update/" + currentUser._id, {
+    fetch("http://localhost:5000/user/update/"+currentUser._id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -75,41 +64,34 @@ const Dashboard = () => {
       body: JSON.stringify({
         notes: noteText,
       }),
-    }).then((res) => {
-      refreshUser()
+    }).then(res => {
+        refreshUser();
     })
   }
+
 
   const fetchPlans = () => {
     fetch(url + "/plan/getall")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        setPlanArray(data)
+        console.log(data);
+        setPlanArray(data);
       })
   }
-  const fetchReminder = () => {
-    fetch(url + "/reminder/getall")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        setReminderArray(data)
-      })
-  }
-
+  
   const refreshUser = () => {
-    fetch(url + "/user/getbyid/" + currentUser._id)
+    fetch(url + "/user/getbyid/"+currentUser._id)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        setCurrentUser(data)
-        sessionStorage.setItem("user", JSON.stringify(data))
+        console.log(data);
+        setCurrentUser(data);
+        sessionStorage.setItem('user', JSON.stringify(data));
       })
   }
 
   useEffect(() => {
-    fetchPlans()
-    fetchReminder()
+    fetchPlans();
+    fetchReminder();
   }, [])
 
   const deleteTodo = (id) => {
@@ -128,6 +110,14 @@ const Dashboard = () => {
         fetchReminder();
       })
   }
+  const fetchReminder = () => {
+    fetch(url + "/reminder/getall")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        setReminderArray(data)
+      })
+  }
 
   return (
     
@@ -141,39 +131,47 @@ const Dashboard = () => {
             </div>
             <hr className="m-0" />
             <div className="card-body">
-              <button className="btn btn-outline-primary w-100">
+              <button className="btn btn-outline-secondary w-100">
                 {" "}
                 <a class="text-reset me-3" href="Home">
                 <i class="fas fa-home"></i> Home
                 </a>
               </button>
-              <button className="btn btn-outline-primary w-100 mt-3">
+              <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="#">
                 <i></i> Account
                 </a>
               </button>
-              <button className="btn btn-outline-primary w-100 mt-3">
+              <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
                 <i></i> Settings 
               </button>
-              <button className="btn btn-outline-primary w-100 mt-3">
+              <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="Dashboard">
                 <i></i> Dashboard
                 </a>
               </button>
-              <button className="btn btn-outline-primary w-100 mt-3">
+              <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="temp1_MP">
                 <i></i> Templates
                 </a>
               </button>
-              <button className="btn btn-outline-primary w-100 mt-3">
+              <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="#">
                 <i></i> <i class="fa fa-trash" aria-hidden="true"></i> Trash
                 </a>
+              </button>
+              <button className="btn btn-outline-secondary w-100 mt-3">
+                {" "}
+                <i></i> About Us
+              </button>
+              <button className="btn btn-outline-secondary w-100 mt-3">
+                {" "}
+                <i></i> Contact Us
               </button>
             </div>
           </div>
@@ -188,14 +186,11 @@ const Dashboard = () => {
                   <h5 className="m-0">{new Date().toLocaleDateString()}</h5>
                 </div>
                 <div className="card-body">
-                  <div className="input-group">
-                    <input onChange={(e) => setPlanText(e.target.value)} type="text" className="form-control" />
-                    <button onClick={addPlan} className="btn btn-secondary">
-                      {" "}
-                      <i class="fas fa-plus    "></i>{" "}
-                    </button>
-                  </div>
-                  <div style={{ height: "20rem", overflow: "auto" }}>
+                    <div className="input-group">
+                        <input onChange={e => setPlanText(e.target.value)} type="text" className="form-control" />
+                        <button onClick={addPlan} className="btn btn-secondary"> <i class="fas fa-plus    "></i> </button>
+                    </div>
+                    <div style={{height : '12rem', overflow: 'auto'}}>
                     <ul className="list-group mt-3">
                       {planArray.map((plan) => (
                         <li className="list-group-item d-flex justify-content-between">
@@ -259,7 +254,7 @@ const Dashboard = () => {
               <div className="card bottom-card">
                 <div className="card-header">
                   <h4 className="m-0">Important Reminders</h4>
-                </div>
+                </div>                
                 <div className="card-body">
                   <div className="input-group">
                     <input onChange={(e) => setReminderText(e.target.value)} type="text" className="form-control" />
@@ -282,12 +277,12 @@ const Dashboard = () => {
                     </ul>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div>   
   )
 }
 

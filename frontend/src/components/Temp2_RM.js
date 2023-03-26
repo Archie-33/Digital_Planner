@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react"
 
-const Temp1_MP = () => {
+const Temp2_RM = () => {
     
   
   const url = "http://localhost:5000"
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")))
-  const [meal, setMeal] = useState("");
-  const [dishName, setdishName] = useState("");
-  const [recipe, setrecipe] = useState("");
-  const [ingredients, setingredients] = useState("");
+  const [time, settime] = useState("");
+  const [monday, setmonday] = useState("");
+  const [tuesday, settuesday] = useState("");
+  const [wednesday, setwednesday] = useState("");
+  const [thursday, setthursday] = useState("");
+  const [friday, setfriday] = useState("");
+  const [saturday, setsaturday] = useState("");
+  const [sunday, setsunday] = useState("");
   
-  const [mealList, setMealList] = useState([])
+  const [routineList, setRoutineList] = useState([])
 
  
   const addToList = () => {
-    fetch("http://localhost:5000/meal/insert", {
+    fetch("http://localhost:5000/routine/insert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -66,41 +70,48 @@ const Temp1_MP = () => {
             </div>
             <hr className="m-0" />
             <div className="card-body">
-              <button className="btn btn-outline-secondary w-100">
+              <button className="btn btn-outline-primary w-100">
                 {" "}
                 <a class="text-reset me-3" href="Home">
                 <i class="fas fa-home"></i> Home
                 </a>
               </button>
-              <button className="btn btn-outline-secondary w-100 mt-3">
+              <button className="btn btn-outline-primary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="#">
                 <i></i> Account
                 </a>
               </button>
-              <button className="btn btn-outline-secondary w-100 mt-3">
+              <button className="btn btn-outline-primary w-100 mt-3">
                 {" "}
                 <i></i> Settings 
               </button>
-              <button className="btn btn-outline-secondary w-100 mt-3">
+              <button className="btn btn-outline-primary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="Dashboard">
                 <i></i> Dashboard
                 </a>
               </button>
-              <button className="btn btn-outline-secondary w-100 mt-3">
+              <button className="btn btn-outline-primary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="#">
                 <i></i> Templates
                 </a>
               </button>
-              <button className="btn btn-outline-secondary w-100 mt-3">
+              <button className="btn btn-outline-primary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="#">
                 <i></i> <i class="fa fa-trash" aria-hidden="true"></i> Trash
                 </a>
               </button>
-              
+              <button className="btn btn-outline-secondary w-100 mt-3">
+                {" "}
+                <i></i> About Us
+              </button>
+              <button className="btn btn-outline-secondary w-100 mt-3">
+                {" "}
+                <i></i> <i class="fa fa-phone" aria-hidden="true"></i> Contact Us
+              </button>
               </div>
               
           </div>
@@ -110,13 +121,12 @@ const Temp1_MP = () => {
             <div className="col-md-6">
               <div className="card top-card">
                 <div className="card-header">
-                  <h4 className="m-0">MEAL PLANNER</h4>
-                  <h5 className="m-0">{new Date().toLocaleDateString()}</h5>
+                  <h4 className="m-0">DAY ROUTINE MAPPING</h4>
                   </div>
                   <div className="card-header">
                   <h4 className="m-2">
-                    <label>Meal for the Day :</label>
-                    <input type="text" placeholder="Enter meal" onChange={(event) => {setMeal(event.target.value);}}/>
+                    <label>Time :</label>
+                    <input type="text" placeholder="Enter time" onChange={(event) => {setMeal(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
                     <label>Name of the Dish :</label>
@@ -196,4 +206,4 @@ const Temp1_MP = () => {
         
         )
 }
-export default Temp1_MP;
+export default Temp2_RM;
