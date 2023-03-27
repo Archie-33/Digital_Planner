@@ -155,7 +155,7 @@ const Dashboard = () => {
               </button>
               <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
-                <a class="text-reset me-3" href="temp1_MP">
+                <a class="text-reset me-3" href="templates">
                 <i></i> Templates
                 </a>
               </button>

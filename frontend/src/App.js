@@ -10,6 +10,7 @@ import Temp1_MP from "./components/Temp1_MP"
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import Temp2_RM from "./components/Temp2_RM"
+import Templates from "./components/Templates"
 
 function App() {
   TimeAgo.addDefaultLocale(en);
@@ -26,6 +27,7 @@ function App() {
           <Route element={<Dashboard />} path="dashboard" />
           <Route element={<Temp1_MP />} path="temp1_MP" />
           <Route element={<Temp2_RM />} path="temp2_RM" />
+          <Route element={<Templates />} path="templates" />
 
 
 
