@@ -171,7 +171,7 @@ const Dashboard = () => {
               </button>
               <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
-                <i></i> Contact Us
+                <i></i><i class="fa fa-phone" aria-hidden="true"></i> Contact Us
               </button>
             </div>
           </div>

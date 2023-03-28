@@ -134,31 +134,31 @@ const Temp2_RM = () => {
                     </h4>
                     <h4 className="m-2">
                     <label>MONDAY ACTIVITY :</label>
-                    <input type="text" placeholder="Dish name" onChange={(event) => {setmonday(event.target.value);}}/>
+                    <input type="text" placeholder="Enter activity" onChange={(event) => {setmonday(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
                     <label>TUESDAY ACTIVITY :</label>
-                    <input type="text" placeholder="Enter recipe" onChange={(event) => {settuesday(event.target.value);}}/>
+                    <input type="text" placeholder="Enter activity" onChange={(event) => {settuesday(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
                     <label>WEDNESDAY ACTIVITY :</label>
-                    <input type="text" placeholder="Enter ingredients" onChange={(event) => {setwednesday(event.target.value);}}/>                   
+                    <input type="text" placeholder="Enter activity" onChange={(event) => {setwednesday(event.target.value);}}/>                   
                   </h4>
                   <h4 className="m-2">
                     <label>THURSDAY ACTIVITY :</label>
-                    <input type="text" placeholder="Enter ingredients" onChange={(event) => {setthursday(event.target.value);}}/>
+                    <input type="text" placeholder="Enter activity" onChange={(event) => {setthursday(event.target.value);}}/>
                   </h4>
                   <h4 className="m-2">
                     <label>FRIDAY ACTIVITY :</label>
-                    <input type="text" placeholder="Enter recipe" onChange={(event) => {setfriday(event.target.value);}}/>
+                    <input type="text" placeholder="Enter activity" onChange={(event) => {setfriday(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
                     <label>SATURDAY ACTIVITY :</label>
-                    <input type="text" placeholder="Enter recipe" onChange={(event) => {setsaturday(event.target.value);}}/>
+                    <input type="text" placeholder="Enter activity" onChange={(event) => {setsaturday(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
                     <label>SUNDAY ACTIVITY :</label>
-                    <input type="text" placeholder="Enter recipe" onChange={(event) => {setsunday(event.target.value);}}/>
+                    <input type="text" placeholder="Enter activity" onChange={(event) => {setsunday(event.target.value);}}/>
                     <button className="btn btn-outline-secondary w-100 mt-3" onClick={addToList}>Add to List</button>
                     </h4>
                   </div>
