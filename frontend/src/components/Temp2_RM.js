@@ -98,7 +98,7 @@ const Temp2_RM = () => {
               </button>
               <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
-                <a class="text-reset me-3" href="#">
+                <a class="text-reset me-3" href="templates">
                 <i></i> Templates
                 </a>
               </button>
