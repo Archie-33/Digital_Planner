@@ -50,6 +50,9 @@
   height: 58vh;
   margin-top: 10px;  
 }
+.side-card{
+  height: 120vh;
+}
 .card-header{
   text-align: center;
 }

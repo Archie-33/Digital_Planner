@@ -24,36 +24,40 @@ const Temp2_RM = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        meal: meal,
-        dishName: dishName,
-        recipe: recipe,
-        ingredients: ingredients,
+        time: time,
+        monday: monday,
+        tuesday: tuesday,
+        wednesday: wednesday,
+        thursday: thursday,
+        friday: friday,
+        saturday: saturday,
+        sunday: sunday,
       }),
     }).then((res) => {
-      fetchMeals()
+      fetchRoutine()
     })
         
   };
-  const fetchMeals = () => {
-    fetch(url + "/meal/getall")
+  const fetchRoutine = () => {
+    fetch(url + "/routine/getall")
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        setMealList(data)
+        setRoutineList(data)
       })
   }
-  const deleteMeal = (id) => {
-    fetch(url + "/meal/delete/" + id, {method : 'DELETE'})
+  const deleteRoutine = (id) => {
+    fetch(url + "/routine/delete/" + id, {method : 'DELETE'})
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        fetchMeals();
+        fetchRoutine();
       })
   }
  
  
   useEffect(() => {
-    fetchMeals()
+    fetchRoutine()
   }, [])
 
 
@@ -70,35 +74,35 @@ const Temp2_RM = () => {
             </div>
             <hr className="m-0" />
             <div className="card-body">
-              <button className="btn btn-outline-primary w-100">
+              <button className="btn btn-outline-secondary w-100">
                 {" "}
                 <a class="text-reset me-3" href="Home">
                 <i class="fas fa-home"></i> Home
                 </a>
               </button>
-              <button className="btn btn-outline-primary w-100 mt-3">
+              <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="#">
                 <i></i> Account
                 </a>
               </button>
-              <button className="btn btn-outline-primary w-100 mt-3">
+              <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
                 <i></i> Settings 
               </button>
-              <button className="btn btn-outline-primary w-100 mt-3">
+              <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="Dashboard">
                 <i></i> Dashboard
                 </a>
               </button>
-              <button className="btn btn-outline-primary w-100 mt-3">
+              <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="#">
                 <i></i> Templates
                 </a>
               </button>
-              <button className="btn btn-outline-primary w-100 mt-3">
+              <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
                 <a class="text-reset me-3" href="#">
                 <i></i> <i class="fa fa-trash" aria-hidden="true"></i> Trash
@@ -119,28 +123,44 @@ const Temp2_RM = () => {
         <div className="col-md-10">
           <div className="row">
             <div className="col-md-6">
-              <div className="card top-card">
+              <div className="card side-card">
                 <div className="card-header">
                   <h4 className="m-0">DAY ROUTINE MAPPING</h4>
                   </div>
                   <div className="card-header">
                   <h4 className="m-2">
-                    <label>Time :</label>
-                    <input type="text" placeholder="Enter time" onChange={(event) => {setMeal(event.target.value);}}/>
+                    <label>TIME OF THE DAY :</label>
+                    <input type="text" placeholder="Enter time" onChange={(event) => {settime(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>Name of the Dish :</label>
-                    <input type="text" placeholder="Dish name" onChange={(event) => {setdishName(event.target.value);}}/>
+                    <label>MONDAY ACTIVITY :</label>
+                    <input type="text" placeholder="Dish name" onChange={(event) => {setmonday(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>Recipe of the Dish :</label>
-                    <input type="text" placeholder="Enter recipe" onChange={(event) => {setrecipe(event.target.value);}}/>
+                    <label>TUESDAY ACTIVITY :</label>
+                    <input type="text" placeholder="Enter recipe" onChange={(event) => {settuesday(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>Main Ingredients :</label>
-                    <input type="text" placeholder="Enter ingredients" onChange={(event) => {setingredients(event.target.value);}}/>
-                    <button className="btn btn-outline-secondary w-100 mt-3" onClick={addToList}>Add to List</button>
+                    <label>WEDNESDAY ACTIVITY :</label>
+                    <input type="text" placeholder="Enter ingredients" onChange={(event) => {setwednesday(event.target.value);}}/>                   
                   </h4>
+                  <h4 className="m-2">
+                    <label>THURSDAY ACTIVITY :</label>
+                    <input type="text" placeholder="Enter ingredients" onChange={(event) => {setthursday(event.target.value);}}/>
+                  </h4>
+                  <h4 className="m-2">
+                    <label>FRIDAY ACTIVITY :</label>
+                    <input type="text" placeholder="Enter recipe" onChange={(event) => {setfriday(event.target.value);}}/>
+                    </h4>
+                    <h4 className="m-2">
+                    <label>SATURDAY ACTIVITY :</label>
+                    <input type="text" placeholder="Enter recipe" onChange={(event) => {setsaturday(event.target.value);}}/>
+                    </h4>
+                    <h4 className="m-2">
+                    <label>SUNDAY ACTIVITY :</label>
+                    <input type="text" placeholder="Enter recipe" onChange={(event) => {setsunday(event.target.value);}}/>
+                    <button className="btn btn-outline-secondary w-100 mt-3" onClick={addToList}>Add to List</button>
+                    </h4>
                   </div>
                   </div>
                   </div>
@@ -150,15 +170,19 @@ const Temp2_RM = () => {
               <div className="col-md-12">
               <div className="card bottom-card1">
                 <div className="card-header">
-                  <h4 className="m-0">MEAL LIST</h4>
+                  <h4 className="m-0">DAY ROUTINE</h4>
                 </div>
                 <table border={1} width="100%" cellPadding={10}>
                   <tbody>
                   <tr>
-                    <th>Meal</th>
-                    <th>Dish Name</th>
-                    <th>Recipe</th>
-                    <th>Ingredients</th>
+                    <th>Time</th>
+                    <th>Mon</th>
+                    <th>Tues</th>
+                    <th>Wed</th>
+                    <th>Thurs</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
                     <th>Actions</th>
                   </tr>
                   {/* {mealList.map((val,key) => {
@@ -179,14 +203,18 @@ const Temp2_RM = () => {
                       </td>
                       </div>
                   })} */}
-                  {mealList.map((val,key) => {
+                  {routineList.map((val,key) => {
                     return(
                       <tr key={key}>
-                        <td><h4>{val.meal}</h4></td>
-                        <td><h4>{val.dishName}</h4></td>
-                        <td><h4>{val.recipe}</h4></td>
-                        <td><h4>{val.ingredients}</h4></td>
-                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteMeal(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
+                        <td><h4>{val.time}</h4></td>
+                        <td><h4>{val.monday}</h4></td>
+                        <td><h4>{val.tuesday}</h4></td>
+                        <td><h4>{val.wednesday}</h4></td>
+                        <td><h4>{val.thursday}</h4></td>
+                        <td><h4>{val.friday}</h4></td>
+                        <td><h4>{val.saturday}</h4></td>
+                        <td><h4>{val.sunday}</h4></td>
+                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteRoutine(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
                         </td>
                       </tr>
                     )
