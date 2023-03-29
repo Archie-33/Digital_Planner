@@ -167,11 +167,15 @@ const Dashboard = () => {
               </button>
               <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
+                <a class="text-reset me-3" href="aboutUs">
                 <i></i> About Us
+                </a>
               </button>
               <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
-                <i></i><i class="fa fa-phone" aria-hidden="true"></i> Contact Us
+                <a class="text-reset me-3" href="contactUs">
+                <i></i><i class="fa fa-phone" aria-hidden="true"></i>Contact Us
+                </a>
               </button>
             </div>
           </div>
