@@ -4,7 +4,7 @@ import "./ContactUs.css"
 const ContactUs = () => {
     
     return(
-        <div className="body">
+        <div className="body1">
         <div class="container">
         <div class="content">
           <div class="left-side">

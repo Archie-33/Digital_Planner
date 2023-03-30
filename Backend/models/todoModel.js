@@ -5,6 +5,10 @@ const TodoSchema = new Schema ({
         type: String,
         required: true,
     },
+    note: {
+        type : String,
+        default : '',
+    }
    })
 
 const todoModel = model("todoModel", TodoSchema);

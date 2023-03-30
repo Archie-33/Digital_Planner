@@ -11,6 +11,9 @@ const planRouter = require('./routers/planRouter');
 const mealRouter = require('./routers/mealRouter');
 const reminderRouter = require('./routers/reminderRouter');
 const routineRouter = require('./routers/routineRouter');
+const todoRouter = require('./routers/todoRouter');
+const todo2Router = require('./routers/todo2Router');
+
 
 const cors = require('cors');
 
@@ -27,6 +30,9 @@ app.use('/user', userRouter);
 app.use('/meal', mealRouter);
 app.use('/reminder', reminderRouter);
 app.use('/routine', routineRouter);
+app.use('/todo', todoRouter);
+app.use('/todo2', todo2Router);
+
 
 
 app.get('/add', (req, res) => {
