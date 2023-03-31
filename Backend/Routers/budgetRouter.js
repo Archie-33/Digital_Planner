@@ -1,19 +1,21 @@
 const express = require('express');
 const router = express.Router();
 
-const Model = require('../models/mealModel');
+const Model = require('../models/budgetModel');
 
 router.post('/insert', (req, res) => {
     // console.log(req.body);
-    const meal=req.body.meal
-    const dishName=req.body.dishName
-    const recipe=req.body.recipe
-    const ingredients=req.body.ingredients
+    const income=req.body.income
+    const amti=req.body.amti
+    const saved=req.body.saved
+    const amts=req.body.amts
+    const debt=req.body.debt
+    const amtd=req.body.amtd
       
-    const mealPlanner=new Model({meal: meal, dishName: dishName, recipe: recipe, ingredients: ingredients});
+    const budgetPlanner=new Model({income: income, amti: amti, saved: saved, amts: amts, debt: debt, amtd: amtd});
     
     // async function
-    new Model(mealPlanner).save()
+    new Model(routinePlanner).save()
     .then((data) => {
         console.log(data);
         res.json(data); //default status code is 200
@@ -84,6 +86,5 @@ router.put('/update/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
-
 
 module.exports = router;

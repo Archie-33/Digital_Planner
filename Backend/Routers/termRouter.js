@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
-const Model = require('../models/mealModel');
+const Model = require('../models/termModel');
 
 router.post('/insert', (req, res) => {
     // console.log(req.body);
-    const meal=req.body.meal
-    const dishName=req.body.dishName
-    const recipe=req.body.recipe
-    const ingredients=req.body.ingredients
+    const course1=req.body.course1
+    const notes=req.body.notes
+    const credit=req.body.credit
+    const grade=req.body.grade
       
-    const mealPlanner=new Model({meal: meal, dishName: dishName, recipe: recipe, ingredients: ingredients});
+    const termPlanner=new Model({course1: course1, notes: notes, credit: credit, grade: grade});
     
     // async function
-    new Model(mealPlanner).save()
+    new Model(termPlanner).save()
     .then((data) => {
         console.log(data);
         res.json(data); //default status code is 200
