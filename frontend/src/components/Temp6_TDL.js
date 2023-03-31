@@ -8,7 +8,6 @@ const Temp6_TDL = () => {
   const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem("user")))
   const [todoText, settodoText] = useState("");
   const [todoText2, settodoText2] = useState("");
-  const [noteText, setNoteText] = useState(currentUser.note);
  
   
   const [todoArray, settodoArray] = useState([])

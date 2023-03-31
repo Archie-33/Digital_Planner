@@ -11,6 +11,7 @@ const planRouter = require('./routers/planRouter');
 const mealRouter = require('./routers/mealRouter');
 const reminderRouter = require('./routers/reminderRouter');
 const routineRouter = require('./routers/routineRouter');
+const workoutRouter = require('./routers/workoutRouter');
 const todoRouter = require('./routers/todoRouter');
 const todo2Router = require('./routers/todo2Router');
 
@@ -30,6 +31,7 @@ app.use('/user', userRouter);
 app.use('/meal', mealRouter);
 app.use('/reminder', reminderRouter);
 app.use('/routine', routineRouter);
+app.use('/workout', workoutRouter);
 app.use('/todo', todoRouter);
 app.use('/todo2', todo2Router);
 
