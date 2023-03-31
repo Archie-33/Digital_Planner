@@ -51,6 +51,7 @@ const Signup = () => {
   });
 
   return (
+    <div className="body">
     <div className="container">
       <h1>Signup Here</h1>
       <hr />
@@ -109,6 +110,7 @@ const Signup = () => {
           </form>
         )}
       </Formik>
+    </div>
     </div>
   )
 }

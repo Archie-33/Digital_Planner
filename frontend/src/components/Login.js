@@ -51,7 +51,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div> 
             <div className="col-md-4 mx-auto bg-light">
                 <div className="card mt-5">
                     <div className="card-body">

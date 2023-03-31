@@ -14,6 +14,7 @@ import Templates from "./components/Templates"
 import ContactUs from "./components/ContactUs"
 import AboutUs from "./components/AboutUs"
 import Temp6_TDL from "./components/Temp6_TDL"
+import Temp7_WP from "./components/Temp7_WP"
 
 function App() {
   TimeAgo.addDefaultLocale(en);
@@ -31,6 +32,7 @@ function App() {
           <Route element={<Temp1_MP />} path="temp1_MP" />
           <Route element={<Temp2_RM />} path="temp2_RM" />
           <Route element={<Temp6_TDL />} path="temp6_TDL" />
+          <Route element={<Temp7_WP />} path="temp7_WP" />
           <Route element={<Templates />} path="templates" />
           <Route element={<ContactUs />} path="contactUs" />
           <Route element={<AboutUs />} path="aboutUs" />

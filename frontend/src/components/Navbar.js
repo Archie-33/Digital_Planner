@@ -103,10 +103,10 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
               data-mdb-toggle="dropdown"
               aria-expanded="false">
               <img
-                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                src="avatar2.jpg"
                 class="rounded-circle"
                 height="25"
-                alt="Black and White Portrait of a Man"
+                alt="Profile pic"
                 loading="lazy"
               />
             </a>

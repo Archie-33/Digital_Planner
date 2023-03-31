@@ -18,7 +18,7 @@ const Temp7_WP = () => {
 
  
   const addToList = () => {
-    fetch("http://localhost:5000/routine/insert", {
+    fetch("http://localhost:5000/workout/insert", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -133,35 +133,35 @@ const Temp7_WP = () => {
                   </div>
                   <div className="card-header">
                   <h4 className="m-2">
-                    <label>TIME OF THE DAY :</label>
-                    <input type="text" placeholder="Enter time" onChange={(event) => {setday(event.target.value);}}/>
+                    <label>DAY OF THE WEEK:</label>
+                    <input type="text" placeholder="Enter day" onChange={(event) => {setday(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>MONDAY ACTIVITY :</label>
-                    <input type="text" placeholder="Enter activity" onChange={(event) => {setbodypart(event.target.value);}}/>
+                    <label>PART OF THE BODY:</label>
+                    <input type="text" placeholder="Enter body part" onChange={(event) => {setbodypart(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>TUESDAY ACTIVITY :</label>
+                    <label>EXERCISE NUMBER 1 :</label>
                     <input type="text" placeholder="Enter activity" onChange={(event) => {setexercise1(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>WEDNESDAY ACTIVITY :</label>
+                    <label>EXERCISE NUMBER 2 :</label>
                     <input type="text" placeholder="Enter activity" onChange={(event) => {setexercise2(event.target.value);}}/>                   
                   </h4>
                   <h4 className="m-2">
-                    <label>THURSDAY ACTIVITY :</label>
+                    <label>EXERCISE NUMBER 3 :</label>
                     <input type="text" placeholder="Enter activity" onChange={(event) => {setexercise3(event.target.value);}}/>
                   </h4>
                   <h4 className="m-2">
-                    <label>FRIDAY ACTIVITY :</label>
+                    <label>EXERCISE NUMBER 4 :</label>
                     <input type="text" placeholder="Enter activity" onChange={(event) => {setexercise4(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>SATURDAY ACTIVITY :</label>
+                    <label>EXERCISE NUMBER 5 :</label>
                     <input type="text" placeholder="Enter activity" onChange={(event) => {setexercise5(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>SUNDAY ACTIVITY :</label>
+                    <label>EXERCISE NUMBER 6 :</label>
                     <input type="text" placeholder="Enter activity" onChange={(event) => {setexercise6(event.target.value);}}/>
                     <button className="btn btn-outline-secondary w-100 mt-3" onClick={addToList}>Add to List</button>
                     </h4>
