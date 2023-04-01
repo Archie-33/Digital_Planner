@@ -47,30 +47,6 @@
   height : 75vh;
 }
 .bottom-card{
-  height: 58vh;
-  margin-top: 10px;  
-}
-.side-card{
-  height: 120vh;
-}
-.side1-card{
-  height: 100vh;
-  margin-bottom: 10px;
-}
-.card-header{
-  text-align: center;
-}
-.td,th{
-  text-align: center;
-}
-.bottom-card1{
-  margin-top: 10px;
-}
-.btn-outline-primary{
-  color: #c874e9;
-  border-color: #c874e9;
-}
-.tbody{
-  text-align: center;
+  height: 48vh;
 }
 
