@@ -27,7 +27,7 @@ const Login = () => {
             Swal.fire({
                 icon : 'success',
                 title : 'Login Successful',
-                text : 'You are now logged in'
+                text : 'Greetings! you are now logged in'
             })
             res.json().then(data => {
                 console.log(data);
@@ -51,7 +51,7 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div> 
             <div className="col-md-4 mx-auto bg-light">
                 <div className="card mt-5">
                     <div className="card-body">
@@ -60,7 +60,7 @@ const Login = () => {
                             {({values, handleChange, handleSubmit}) => (
                                 <form onSubmit={handleSubmit}>
                                     
-                                    <h3 className="text-center">Sign-in Here</h3>
+                                    <h3 className="text-center">Login Here</h3>
                                     <hr />
 
                                     <label className='mt-4'>Email</label>

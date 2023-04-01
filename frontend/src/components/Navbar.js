@@ -21,7 +21,7 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <a class="navbar-brand mt-2 mt-lg-0" href="#">
-            <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15" alt="MDB Logo" loading="lazy" />
+            <img src="Euphoriaque_logo.png" height="40" width="40" alt="Euphoriaque" loading="lazy" />
           </a>
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -36,8 +36,23 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
               </NavLink>
             </li>
             <li class="nav-item">
+              <NavLink className="nav-link" to="/signup">
+                Sign up
+              </NavLink>
+            </li>
+            <li class="nav-item">
               <NavLink className="nav-link" to="/dashboard">
                 Dashboard
+              </NavLink>
+            </li>
+            <li class="nav-item">
+              <NavLink className="nav-link" to="/">
+                About Us
+              </NavLink>
+            </li>
+            <li class="nav-item">
+              <NavLink className="nav-link" to="/contactUs">
+                Contact Us
               </NavLink>
             </li>
            
@@ -88,10 +103,10 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
               data-mdb-toggle="dropdown"
               aria-expanded="false">
               <img
-                src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                src="avatar2.jpg"
                 class="rounded-circle"
                 height="25"
-                alt="Black and White Portrait of a Man"
+                alt="Profile pic"
                 loading="lazy"
               />
             </a>
@@ -119,4 +134,5 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
   )
 }
 
-export default Navbar
+export default Navbar;
+
