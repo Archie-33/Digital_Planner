@@ -45,8 +45,12 @@
 
 .top-card{
   height : 75vh;
+  text-align: center;
 }
 .bottom-card{
   height: 48vh;
 }
-
+.bottom-card1{
+  text-align: center;
+  margin-top: 10px;
+}
