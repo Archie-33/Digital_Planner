@@ -64,10 +64,11 @@
 .card-header{
   text-align: center;
 }
-.td,th{
-  text-align: center;
+.bottom-card{
+  height: 48vh;
 }
 .bottom-card1{
+  text-align: center;
   margin-top: 10px;
   text-align: center;
 }
