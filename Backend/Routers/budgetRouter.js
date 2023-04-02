@@ -15,7 +15,7 @@ router.post('/insert', (req, res) => {
     const budgetPlanner=new Model({income: income, amti: amti, saved: saved, amts: amts, debt: debt, amtd: amtd});
     
     // async function
-    new Model(routinePlanner).save()
+    new Model(budgetPlanner).save()
     .then((data) => {
         console.log(data);
         res.json(data); //default status code is 200

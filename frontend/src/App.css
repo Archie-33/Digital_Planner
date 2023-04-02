@@ -53,6 +53,10 @@
 .side-card{
   height: 120vh;
 }
+.side1-card{
+  height: 100vh;
+  margin-bottom: 10px;
+}
 .card-header{
   text-align: center;
 }
@@ -65,5 +69,8 @@
 .btn-outline-primary{
   color: #c874e9;
   border-color: #c874e9;
+}
+.tbody{
+  text-align: center;
 }
 
