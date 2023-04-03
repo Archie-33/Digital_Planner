@@ -1,9 +1,25 @@
-import React from "react"
+import {useRef} from "react"
+import emailjs from '@emailjs/browser';
 import "./ContactUs.css"
 
 const ContactUs = () => {
+
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_k1p9tqa', 'template_ash1cyv', form.current, 'sI5_NFsks0Yy55YVw')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset()
+  }
     
     return(
+      <section>
         <div className="body1">
         <div class="container">
         <div class="content">
@@ -30,27 +46,28 @@ const ContactUs = () => {
           <div class="right-side">
             <div class="topic-text">SEND US A MESSAGE</div>
             <p>If you have any work related queries or any complaints, you can send us a message here. It'll be our pleasure to help you.</p>
-          <form action="#">
+          <form ref={form} onSubmit={sendEmail}>
             <div class="input-box">
-              <input type="text" placeholder="Enter your name"/>
+              <input type="text" placeholder="Enter your name" name="user_name" required/>
             </div>
             <div class="input-box">
-              <input type="text" placeholder="Enter your email"/>
+              <input type="text" placeholder="Enter your email" name="user_email" required/>
             </div>
             <div class="input-box">
-              <input type="text" placeholder="Enter your Phone No."/>
+              <input type="text" placeholder="Enter message subject" name="subject" required/>
             </div>
             <div class="input-box message-box">
-              <textarea placeholder="Enter your message"></textarea>
+              <textarea name="message" placeholder="Enter your message"></textarea>
             </div>
             <div class="button">
-              <input type="button" value="Send Now"/>
+              <button type="submit" className="btn btn-outline-secondary">Send Message</button>
             </div>
           </form>
         </div>
         </div>
       </div>
       </div>
+      </section>
 
 
                 
