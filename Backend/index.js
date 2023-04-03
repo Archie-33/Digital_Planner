@@ -19,6 +19,9 @@ const todo2Router = require('./routers/todo2Router');
 const budgetRouter = require('./routers/budgetRouter');
 const expenseRouter = require('./routers/expenseRouter');
 const totalRouter = require('./routers/totalRouter');
+const physicalRouter = require('./Routers/physicalRouter');
+const mentalRouter = require('./Routers/mentalRouter');
+const affRouter = require('./Routers/affRouter');
 
 
 const cors = require('cors');
@@ -44,6 +47,10 @@ app.use('/expense', expenseRouter);
 app.use('/total', totalRouter);
 app.use('/todo', todoRouter);
 app.use('/todo2', todo2Router);
+app.use('/physical', physicalRouter);
+app.use('/mental', mentalRouter);
+app.use('/aff', affRouter);
+
 
 
 
