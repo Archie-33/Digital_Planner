@@ -75,7 +75,7 @@ const Temp5_BP = () => {
         totalsp: totalsp,
       }),
     }).then((res) => {
-      fetchBudget()
+      fetchTotal()
     })
         
   };
@@ -335,29 +335,25 @@ const Temp5_BP = () => {
               <div className="col-md-12">
               <div className="card bottom-card1">
                 <div className="card-header">
-                  <h4 className="m-0">BUDGET PLAN</h4>
+                  <h4 className="m-0">EXPENSE TRACK</h4>
                 </div>
                 <table border={1} width="100%" cellPadding={10}>
                   <tbody>
                   <tr>
-                    <th>Income</th>
-                    <th>Amt</th>
-                    <th>Saved for</th>
-                    <th>Amt</th>
-                    <th>Debt</th>
-                    <th>Amt</th>
+                    <th>Date</th>
+                    <th>Item</th>
+                    <th>Category</th>
+                    <th>Amount</th>
                     <th>Actions</th>
                   </tr>
-                  {budgetList.map((val,key) => {
+                  {expenseList.map((val,key) => {
                     return(
                       <tr key={key}>
-                        <td><h4>{val.income}</h4></td>
-                        <td><h4>{val.amti}</h4></td>
-                        <td><h4>{val.saved}</h4></td>
-                        <td><h4>{val.amts}</h4></td>
-                        <td><h4>{val.debt}</h4></td>
-                        <td><h4>{val.amtd}</h4></td>
-                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteBudget(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
+                        <td><h4>{val.dateexp}</h4></td>
+                        <td><h4>{val.item}</h4></td>
+                        <td><h4>{val.categ}</h4></td>
+                        <td><h4>{val.amt}</h4></td>
+                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteExpense(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
                         </td>
                       </tr>
                     )
@@ -374,29 +370,25 @@ const Temp5_BP = () => {
               <div className="col-md-12">
               <div className="card bottom-card1">
                 <div className="card-header">
-                  <h4 className="m-0">BUDGET PLAN</h4>
+                  <h4 className="m-0">TOTAL TABLE</h4>
                 </div>
                 <table border={1} width="100%" cellPadding={10}>
                   <tbody>
                   <tr>
-                    <th>Income</th>
-                    <th>Amt</th>
-                    <th>Saved for</th>
-                    <th>Amt</th>
-                    <th>Debt</th>
-                    <th>Amt</th>
+                    <th>Total Income</th>
+                    <th>Total Saving</th>
+                    <th>Total Debt</th>
+                    <th>Total Spend</th>
                     <th>Actions</th>
                   </tr>
-                  {budgetList.map((val,key) => {
+                  {totalList.map((val,key) => {
                     return(
                       <tr key={key}>
-                        <td><h4>{val.income}</h4></td>
-                        <td><h4>{val.amti}</h4></td>
-                        <td><h4>{val.saved}</h4></td>
-                        <td><h4>{val.amts}</h4></td>
-                        <td><h4>{val.debt}</h4></td>
-                        <td><h4>{val.amtd}</h4></td>
-                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteBudget(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
+                        <td><h4>{val.totali}</h4></td>
+                        <td><h4>{val.totals}</h4></td>
+                        <td><h4>{val.totald}</h4></td>
+                        <td><h4>{val.totalsp}</h4></td>
+                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteTotal(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
                         </td>
                       </tr>
                     )

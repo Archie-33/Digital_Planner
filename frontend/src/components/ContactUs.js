@@ -37,6 +37,9 @@ const ContactUs = () => {
             <div class="input-box">
               <input type="text" placeholder="Enter your email"/>
             </div>
+            <div class="input-box">
+              <input type="text" placeholder="Enter your Phone No."/>
+            </div>
             <div class="input-box message-box">
               <textarea placeholder="Enter your message"></textarea>
             </div>

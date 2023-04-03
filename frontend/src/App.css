@@ -51,8 +51,7 @@
   margin-top: 10px;
 }
 .bottom-card{
-  height: 58vh;
-  margin-top: 10px;  
+  height: 60vh;
 }
 .side-card{
   height: 120vh;
@@ -64,13 +63,9 @@
 .card-header{
   text-align: center;
 }
-.bottom-card{
-  height: 48vh;
-}
 .bottom-card1{
   text-align: center;
   margin-top: 10px;
-  text-align: center;
 }
 .btn-outline-primary{
   color: #c874e9;
