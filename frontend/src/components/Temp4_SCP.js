@@ -116,7 +116,7 @@ const Temp4_SCP = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        fetchBudget();
+        fetchPhysical();
       })
   }
   const deleteMental = (id) => {
@@ -212,88 +212,104 @@ const Temp4_SCP = () => {
             <div className="col-md-6">
               <div className="card side-card1">
                 <div className="card-header">
-                  <h4 className="m-0">SELF-CARE PLANNER</h4>
+                  <h4 className="m-0">PHYSICAL DETOX PLANNER</h4>
                   <h5 className="m-0">{new Date().toLocaleDateString()}</h5>
                   </div>
                   <div className="card-header">
                   <h4 className="m-2">
-                    <label>SOURCE OF INCOME :</label>
-                    <input type="text" placeholder="Enter income" onChange={(event) => {setincome(event.target.value);}}/>
+                    <label>Activity to be performed :</label>
+                    <input type="text" placeholder="Enter activity" onChange={(event) => {setactivity(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>AMOUNT OF INCOME :</label>
-                    <input type="text" placeholder="Enter amount" onChange={(event) => {setamti(event.target.value);}}/>
+                    <label>1st day :</label>
+                    <input type="checkbox" onChange={(event) => {setfirst(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>AMOUNT SAVED FOR :</label>
-                    <input type="text" placeholder="Saved for" onChange={(event) => {setsaved(event.target.value);}}/>
+                    <label>2nd day :</label>
+                    <input type="checkbox" onChange={(event) => {setsecond(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>AMOUNT TO BE SAVED :</label>
-                    <input type="text" placeholder="Enter amount" onChange={(event) => {setamts(event.target.value);}}/>                   
+                    <label>3rd day :</label>
+                    <input type="checkbox" onChange={(event) => {setthird(event.target.value);}}/>                   
                   </h4>
                   <h4 className="m-2">
-                    <label>NATURE OF THE DEBT :</label>
-                    <input type="text" placeholder="Enter debt" onChange={(event) => {setdebt(event.target.value);}}/>
+                    <label>4th day :</label>
+                    <input type="checkbox" onChange={(event) => {setfourth(event.target.value);}}/>                   
                   </h4>
                   <h4 className="m-2">
-                    <label>AMOUNT OF THE DEBT :</label>
-                    <input type="text" placeholder="Enter amount" onChange={(event) => {setamtd(event.target.value);}}/>
-                    <button className="btn btn-outline-secondary w-100 mt-3" onClick={addToBudget}>Add to List</button>
-                    </h4>
+                    <label>5th day :</label>
+                    <input type="checkbox" onChange={(event) => {setfifth(event.target.value);}}/>                   
+                  </h4>
+                  <h4 className="m-2">
+                    <label>6th day :</label>
+                    <input type="checkbox" onChange={(event) => {setsixth(event.target.value);}}/>                   
+                  </h4>
+                  <h4 className="m-2">
+                    <label>7th day :</label>
+                    <input type="checkbox" onChange={(event) => {setseventh(event.target.value);}}/>
+                    <button className="btn btn-outline-secondary w-100 mt-3" onClick={addToPhysical}>Add to List</button>
+                  </h4>
                   </div>
                   </div>
                   </div>
                   <div className="col-md-6">
-              <div className="card top-card">
+              <div className="card side-card1">
+                <div className="card-header">
+                  <h4 className="m-0">MENTAL DETOX PLANNER</h4>
+                  <h5 className="m-0">{new Date().toLocaleDateString()}</h5>
+                  </div>
+                  <div className="card-header">
+                  <h4 className="m-2">
+                    <label>Activity to be performed :</label>
+                    <input type="text" placeholder="Enter activity" onChange={(event) => {setactivityM(event.target.value);}}/>
+                    </h4>
+                    <h4 className="m-2">
+                    <label>1st day :</label>
+                    <input type="checkbox" onChange={(event) => {setfirstM(event.target.value);}}/>
+                    </h4>
+                    <h4 className="m-2">
+                    <label>2nd day :</label>
+                    <input type="checkbox" onChange={(event) => {setsecondM(event.target.value);}}/>
+                    </h4>
+                    <h4 className="m-2">
+                    <label>3rd day :</label>
+                    <input type="checkbox" onChange={(event) => {setthirdM(event.target.value);}}/>                   
+                  </h4>
+                  <h4 className="m-2">
+                    <label>4th day :</label>
+                    <input type="checkbox" onChange={(event) => {setfourthM(event.target.value);}}/>                   
+                  </h4>
+                  <h4 className="m-2">
+                    <label>5th day :</label>
+                    <input type="checkbox" onChange={(event) => {setfifthM(event.target.value);}}/>                   
+                  </h4>
+                  <h4 className="m-2">
+                    <label>6th day :</label>
+                    <input type="checkbox" onChange={(event) => {setsixthM(event.target.value);}}/>                   
+                  </h4>
+                  <h4 className="m-2">
+                    <label>7th day :</label>
+                    <input type="checkbox" onChange={(event) => {setseventhM(event.target.value);}}/>
+                    <button className="btn btn-outline-secondary w-100 mt-3" onClick={addToMental}>Add to List</button>
+                  </h4>
+                  </div>
+                  </div>
+                  </div>
+                  <div className="col-md-6">
+              <div className="card top-card2">
                 <div className="card-header">
                   <h4 className="m-0">SELF-CARE PLANNER</h4>
                   <h5 className="m-0">{new Date().toLocaleDateString()}</h5>
                   </div>
                   <div className="card-header">
                   <h4 className="m-2">
-                    <label>DATE OF THE EXPENSE :</label>
-                    <input type="text" placeholder="Enter date" onChange={(event) => {setdateexp(event.target.value);}}/>
+                    <label>INSPIRATION FOR THE WEEK :</label>
+                    <input type="text" placeholder="Enter inspiration" onChange={(event) => {setsinspiration(event.target.value);}}/>
                     </h4>
                     <h4 className="m-2">
-                    <label>ITEM FOR EXPENSE:</label>
-                    <input type="text" placeholder="Enter item" onChange={(event) => {setitem(event.target.value);}}/>
-                    </h4>
-                    <h4 className="m-2">
-                    <label>CATEGORY OF EXPENSE :</label>
-                    <input type="text" placeholder="Enter category" onChange={(event) => {setcateg(event.target.value);}}/>
-                    </h4>
-                    <h4 className="m-2">
-                    <label>AMOUNT OF EXPENSE :</label>
-                    <input type="text" placeholder="Enter amount" onChange={(event) => {setamt(event.target.value);}}/>
-                    <button className="btn btn-outline-secondary w-100 mt-3" onClick={addToExpense}>Add to List</button>
-                    </h4>
-                  </div>
-                  </div>
-                  </div>
-                  <div className="col-md-6">
-              <div className="card top-card1">
-                <div className="card-header">
-                  <h4 className="m-0">SELF-CARE PLANNER</h4>
-                  <h5 className="m-0">{new Date().toLocaleDateString()}</h5>
-                  </div>
-                  <div className="card-header">
-                  <h4 className="m-2">
-                    <label>TOTAL AMOUNT OF INCOME :</label>
-                    <input type="text" placeholder="Enter amount" onChange={(event) => {settotali(event.target.value);}}/>
-                    </h4>
-                    <h4 className="m-2">
-                    <label>TOTAL AMOUNT OF SAVING:</label>
-                    <input type="text" placeholder="Enter amount" onChange={(event) => {settotals(event.target.value);}}/>
-                    </h4>
-                    <h4 className="m-2">
-                    <label>TOTAL AMOUNT OF DEBT :</label>
-                    <input type="text" placeholder="Enter amount" onChange={(event) => {settotald(event.target.value);}}/>
-                    </h4>
-                    <h4 className="m-2">
-                    <label>TOTAL AMOUNT OF SPEND :</label>
-                    <input type="text" placeholder="Enter amount" onChange={(event) => {settotalsp(event.target.value);}}/>
-                    <button className="btn btn-outline-secondary w-100 mt-3" onClick={addToTotal}>Add to List</button>
+                    <label>AFFIRMATION FOR THE WEEK:</label>
+                    <input type="text" placeholder="Enter affirmation" onChange={(event) => {setaffirmation(event.target.value);}}/>
+                    <button className="btn btn-outline-secondary w-100 mt-3" onClick={addToAff}>Add to List</button>
                     </h4>
                   </div>
                   </div>
@@ -304,29 +320,33 @@ const Temp4_SCP = () => {
               <div className="col-md-12">
               <div className="card bottom-card1">
                 <div className="card-header">
-                  <h4 className="m-0">BUDGET PLAN</h4>
+                  <h4 className="m-0">PHYSICAL DETOX PLAN</h4>
                 </div>
                 <table border={1} width="100%" cellPadding={10}>
                   <tbody>
                   <tr>
-                    <th>Income</th>
-                    <th>Amt</th>
-                    <th>Saved for</th>
-                    <th>Amt</th>
-                    <th>Debt</th>
-                    <th>Amt</th>
+                    <th>Activity</th>
+                    <th>1st</th>
+                    <th>2nd</th>
+                    <th>3rd</th>
+                    <th>4th</th>
+                    <th>5th</th>
+                    <th>6th</th>
+                    <th>7th</th>
                     <th>Actions</th>
                   </tr>
-                  {budgetList.map((val,key) => {
+                  {physicalList.map((val,key) => {
                     return(
                       <tr key={key}>
-                        <td><h4>{val.income}</h4></td>
-                        <td><h4>{val.amti}</h4></td>
-                        <td><h4>{val.saved}</h4></td>
-                        <td><h4>{val.amts}</h4></td>
-                        <td><h4>{val.debt}</h4></td>
-                        <td><h4>{val.amtd}</h4></td>
-                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteBudget(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
+                        <td><h4>{val.activity}</h4></td>
+                        <td><h4>{val.first}</h4></td>
+                        <td><h4>{val.second}</h4></td>
+                        <td><h4>{val.third}</h4></td>
+                        <td><h4>{val.fourth}</h4></td>
+                        <td><h4>{val.fifth}</h4></td>
+                        <td><h4>{val.sixth}</h4></td>
+                        <td><h4>{val.seventh}</h4></td>
+                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deletePhysical(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
                         </td>
                       </tr>
                     )
@@ -343,25 +363,33 @@ const Temp4_SCP = () => {
               <div className="col-md-12">
               <div className="card bottom-card1">
                 <div className="card-header">
-                  <h4 className="m-0">EXPENSE TRACK</h4>
+                  <h4 className="m-0">MENTAL DETOX PLAN</h4>
                 </div>
                 <table border={1} width="100%" cellPadding={10}>
                   <tbody>
                   <tr>
-                    <th>Date</th>
-                    <th>Item</th>
-                    <th>Category</th>
-                    <th>Amount</th>
+                    <th>Activity</th>
+                    <th>1st</th>
+                    <th>2nd</th>
+                    <th>3rd</th>
+                    <th>4th</th>
+                    <th>5th</th>
+                    <th>6th</th>
+                    <th>7th</th>
                     <th>Actions</th>
                   </tr>
-                  {expenseList.map((val,key) => {
+                  {mentalList.map((val,key) => {
                     return(
                       <tr key={key}>
-                        <td><h4>{val.dateexp}</h4></td>
-                        <td><h4>{val.item}</h4></td>
-                        <td><h4>{val.categ}</h4></td>
-                        <td><h4>{val.amt}</h4></td>
-                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteExpense(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
+                        <td><h4>{val.activityM}</h4></td>
+                        <td><h4>{val.firstM}</h4></td>
+                        <td><h4>{val.secondM}</h4></td>
+                        <td><h4>{val.thirdM}</h4></td>
+                        <td><h4>{val.fourthM}</h4></td>
+                        <td><h4>{val.fifthM}</h4></td>
+                        <td><h4>{val.sixthM}</h4></td>
+                        <td><h4>{val.seventhM}</h4></td>
+                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteMental(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
                         </td>
                       </tr>
                     )
@@ -378,25 +406,21 @@ const Temp4_SCP = () => {
               <div className="col-md-12">
               <div className="card bottom-card1">
                 <div className="card-header">
-                  <h4 className="m-0">TOTAL TABLE</h4>
+                  <h4 className="m-0">INSPIRATION/AFFIRMATION TABLE</h4>
                 </div>
                 <table border={1} width="100%" cellPadding={10}>
                   <tbody>
                   <tr>
-                    <th>Total Income</th>
-                    <th>Total Saving</th>
-                    <th>Total Debt</th>
-                    <th>Total Spend</th>
+                    <th>Inspiration</th>
+                    <th>Affirmation</th>
                     <th>Actions</th>
                   </tr>
-                  {totalList.map((val,key) => {
+                  {affirmList.map((val,key) => {
                     return(
                       <tr key={key}>
-                        <td><h4>{val.totali}</h4></td>
-                        <td><h4>{val.totals}</h4></td>
-                        <td><h4>{val.totald}</h4></td>
-                        <td><h4>{val.totalsp}</h4></td>
-                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteTotal(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
+                        <td><h4>{val.inspiration}</h4></td>
+                        <td><h4>{val.affirmation}</h4></td>
+                        <td><button className="btn btn-outline-secondary w-30 mt-2" onClick={() => deleteAffirm(val._id)}><i class="fa fa-trash" aria-hidden="true"></i></button>            
                         </td>
                       </tr>
                     )
