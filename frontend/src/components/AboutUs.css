@@ -1,0 +1,29 @@
+.body2{
+    min-height: 100vh;
+    width: 100%;
+    background: #e2c8e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container{
+    width: 85%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px 60px 30px 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .container .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .container .content .text-side{
+    width: 75%;
+    margin-left: 75px;
+  }
+  .content .text-side .topic-text{
+    font-size: 30px;
+    font-weight: 700;
+    color: #a5248f;
+  }
