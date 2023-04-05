@@ -36,7 +36,7 @@ const Templates = () => {
                 </div>
                 
                 <div class="card-body">
-                    <img class="card-img" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f4e40d1c-1e7a-48cc-acce-fab5b858c93b/air-jordan-1-zoom-cmft-shoes-mDxHSk.png"></img>                    
+                    <img class="card-img" src="templates2.jpg"></img>                    
                     <h4>Routine Planner</h4>
                     <button class="btn btn-secondary"><a class="text-reset me-3" href="temp2_RM">
                         <i class="fa fa-pencil" aria-hidden="true"></i>   Use Now   
