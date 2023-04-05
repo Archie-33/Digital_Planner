@@ -1,0 +1,18 @@
+.body1{
+    min-height: 100vh;
+    width: 100%;
+    background: #e2c8e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container1{
+    width: 85%;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px 60px 30px 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .under-pic {
+    text-align: center;
+  }

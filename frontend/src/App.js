@@ -13,6 +13,7 @@ import Temp2_RM from "./components/Temp2_RM"
 import Templates from "./components/Templates"
 import ContactUs from "./components/ContactUs"
 import AboutUs from "./components/AboutUs"
+import AccountPg from "./components/AccountPg"
 import Temp6_TDL from "./components/Temp6_TDL"
 import Temp7_WP from "./components/Temp7_WP"
 import Temp3_TEP from "./components/Temp3_TEP"
@@ -42,6 +43,8 @@ function App() {
           <Route element={<Templates />} path="templates" />
           <Route element={<ContactUs />} path="contactUs" />
           <Route element={<AboutUs />} path="aboutUs" />
+          <Route element={<AccountPg />} path="accountPg" />
+
 
          
 
