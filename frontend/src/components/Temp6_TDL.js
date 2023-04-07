@@ -103,7 +103,7 @@ const Temp6_TDL = () => {
               </button>
               <button className="btn btn-outline-secondary w-100 mt-3">
                 {" "}
-                <a class="text-reset me-3" href="#">
+                <a class="text-reset me-3" href="accountPg">
                 <i></i> Account
                 </a>
               </button>
