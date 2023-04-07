@@ -12,7 +12,7 @@ const mealRouter = require('./routers/mealRouter');
 const reminderRouter = require('./routers/reminderRouter');
 const routineRouter = require('./routers/routineRouter');
 const workoutRouter = require('./routers/workoutRouter');
-const examRouter = require('./routers/examRouter');
+const examRouter = require('./Routers/examRouter');
 const termRouter = require('./routers/termRouter');
 const todoRouter = require('./routers/todoRouter');
 const todo2Router = require('./routers/todo2Router');
@@ -22,6 +22,7 @@ const totalRouter = require('./routers/totalRouter');
 const physicalRouter = require('./Routers/physicalRouter');
 const mentalRouter = require('./Routers/mentalRouter');
 const affRouter = require('./Routers/affRouter');
+const notesRouter = require('./Routers/notesRouter');
 
 
 const cors = require('cors');
@@ -50,6 +51,7 @@ app.use('/todo2', todo2Router);
 app.use('/physical', physicalRouter);
 app.use('/mental', mentalRouter);
 app.use('/aff', affRouter);
+app.use('/note8', notesRouter);
 
 
 

@@ -112,7 +112,7 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
               <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="accountPg">
                   My profile
                 </a>
               </li>
@@ -122,7 +122,7 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="login">
                   Logout
                 </a>
               </li>

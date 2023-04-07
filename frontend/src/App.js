@@ -19,6 +19,7 @@ import Temp7_WP from "./components/Temp7_WP"
 import Temp3_TEP from "./components/Temp3_TEP"
 import Temp5_BP from "./components/Temp5_BP"
 import Temp4_SCP from "./components/Temp4_SCP"
+import Temp8_NP from "./components/Temp8_NP"
 
 function App() {
   TimeAgo.addDefaultLocale(en);
@@ -40,6 +41,7 @@ function App() {
           <Route element={<Temp5_BP />} path="temp5_BP" />
           <Route element={<Temp6_TDL />} path="temp6_TDL" />
           <Route element={<Temp7_WP />} path="temp7_WP" />
+          <Route element={<Temp8_NP />} path="temp8_NP" />
           <Route element={<Templates />} path="templates" />
           <Route element={<ContactUs />} path="contactUs" />
           <Route element={<AboutUs />} path="aboutUs" />
