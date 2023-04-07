@@ -17,7 +17,7 @@ const Templates = () => {
                 </div>
                 
                 <div class="card-body">
-                    <img class="card-img" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f4e40d1c-1e7a-48cc-acce-fab5b858c93b/air-jordan-1-zoom-cmft-shoes-mDxHSk.png"></img>                    
+                    <img class="card-img" src="https://sweetpeasandsaffron.com/wp-content/uploads/2016/10/honey-sesame-chicken-meal-prep-bowls-4-500x500.jpg"></img>                    
                     <h4>Meal Planner</h4>
                     <button class="btn btn-secondary">
                     <a class="text-reset me-3" href="temp1_MP">
@@ -54,7 +54,7 @@ const Templates = () => {
                 </div>
                 
                 <div class="card-body">
-                    <img class="card-img" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f4e40d1c-1e7a-48cc-acce-fab5b858c93b/air-jordan-1-zoom-cmft-shoes-mDxHSk.png"></img>                    
+                    <img class="card-img" src="https://img.freepik.com/free-vector/financial-accounting-male-accountant-cartoon-character-making-financial-report-summary-analysis-reporting-financial-statement-income-balance_335657-845.jpg"></img>                    
                     <h4>Budget Planner</h4>
                     <button class="btn btn-secondary"><a class="text-reset me-3" href="temp5_BP">
                         <i class="fa fa-pencil" aria-hidden="true"></i>   Use Now   
@@ -72,7 +72,7 @@ const Templates = () => {
                 </div>
                 
                 <div class="card-body">
-                    <img class="card-img" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f4e40d1c-1e7a-48cc-acce-fab5b858c93b/air-jordan-1-zoom-cmft-shoes-mDxHSk.png"></img>                    
+                    <img class="card-img" src="https://img.freepik.com/free-vector/college-entrance-exam-concept-illustration_114360-13742.jpg"></img>                    
                     <h4>Term/Exam Planner</h4>
                     <button class="btn btn-secondary"><a class="text-reset me-3" href="temp3_TEP">
                         <i class="fa fa-pencil" aria-hidden="true"></i>   Use Now   
@@ -90,7 +90,7 @@ const Templates = () => {
                 </div>
                 
                 <div class="card-body">
-                    <img class="card-img" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f4e40d1c-1e7a-48cc-acce-fab5b858c93b/air-jordan-1-zoom-cmft-shoes-mDxHSk.png"></img>                    
+                    <img class="card-img" src="https://static.vecteezy.com/system/resources/previews/002/869/683/original/self-care-poster-free-vector.jpg"></img>                    
                     <h4>Self-Care Planner</h4>
                     <button class="btn btn-secondary"><a class="text-reset me-3" href="temp4_SCP">
                         <i class="fa fa-pencil" aria-hidden="true"></i>   Use Now   
@@ -108,7 +108,7 @@ const Templates = () => {
                 </div>
                 
                 <div class="card-body">
-                    <img class="card-img" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f4e40d1c-1e7a-48cc-acce-fab5b858c93b/air-jordan-1-zoom-cmft-shoes-mDxHSk.png"></img>                    
+                    <img class="card-img" src="https://img.freepik.com/premium-vector/sports-man-woman-gym-fitness-club-flat-vector_605858-1074.jpg?w=2000"></img>                    
                     <h4>Workout Planner</h4>
                     <button class="btn btn-secondary"><a class="text-reset me-3" href="temp7_WP">
                         <i class="fa fa-pencil" aria-hidden="true"></i>   Use Now   
@@ -126,7 +126,7 @@ const Templates = () => {
                 </div>
                 
                 <div class="card-body">
-                    <img class="card-img" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f4e40d1c-1e7a-48cc-acce-fab5b858c93b/air-jordan-1-zoom-cmft-shoes-mDxHSk.png"></img>                    
+                    <img class="card-img" src="https://media.istockphoto.com/id/903719860/vector/to-do-list.jpg?s=612x612&w=0&k=20&c=epjdgYi3z-dc9M6GoUYX8dGfKFYsAqQJHqSnjOGkDO4="></img>                    
                     <h4>To-Dos Only</h4>
                     <button class="btn btn-secondary"><a class="text-reset me-3" href="temp6_TDL">
                         <i class="fa fa-pencil" aria-hidden="true"></i>   Use Now   
@@ -144,7 +144,7 @@ const Templates = () => {
                 </div>
                 
                 <div class="card-body">
-                    <img class="card-img" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/f4e40d1c-1e7a-48cc-acce-fab5b858c93b/air-jordan-1-zoom-cmft-shoes-mDxHSk.png"></img>                    
+                    <img class="card-img" src="https://play-lh.googleusercontent.com/36szRvmqeewn6fxpx9V88zhpPU3c84Im9zjAFPZl-cReiztnAD6cn0jSnWBGsNNdPsU"></img>                    
                     <h4>Notes Only</h4>
                     <button class="btn btn-secondary"><a class="text-reset me-3" href="temp8_NP">
                         <i class="fa fa-pencil" aria-hidden="true"></i>   Use Now   
