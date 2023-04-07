@@ -1,8 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from "react"
 import "./AccountPg.css"
 
 const AccountPg = () => {
     
+    const url = "http://localhost:5000";
+    const [currentUser, setCurrentUser] = useState(JSON.parse(sessionStorage.getItem('user')));
+    const [accountArray, setAccountArray] = useState([]);
+    const getAccount = () => {
+        fetch("http://localhost:5000/user/getbyid/"+currentUser._id, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            // notes: noteText,
+          }),
+        }).then(res => {
+            refreshUser();
+        })
+      }
+
+
+
+    const refreshUser = () => {
+        fetch(url + "/user/getbyid/"+currentUser._id)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            setCurrentUser(data);
+            sessionStorage.setItem('user', JSON.stringify(data));
+          })
+      }
     
     return (
         <div className='body2'>
@@ -34,9 +62,17 @@ const AccountPg = () => {
                                 <div className='row'>
                                     <div className='col-md-6'>
                                         <label>User Id</label>
+                                        <label>Name</label>
+                                        <label>Age</label>
+                                        <label>Phone Number</label>
+                                        <label>E-mail</label>
                                     </div>
                                     <div className='col-md-6'>
-                                        <p>2168371837</p>
+                                        <p>{currentUser._id}</p>
+                                        <p>{currentUser._name}</p>
+                                        <p>{currentUser._age}</p>
+                                        <p>{currentUser._mobile}</p>
+                                        <p>{currentUser._email}</p>
                                     </div>
                                 </div>
                             </div>
