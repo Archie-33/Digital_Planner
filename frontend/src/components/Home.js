@@ -56,6 +56,60 @@ const Home = () => {
         </div>
       </div>
       </div>
+      <div className='footer'>
+        <div className='footer-header'>
+          <div className='upper'>
+            <div>
+          <h1>EUPHORIAQUE</h1>
+          <h4>A luxury stationery line</h4>
+          <h6>The Digital Planner is designed and curated by Euphoriaque </h6>
+          </div>
+          <div>
+          <a href='/'>
+              <i className='fa-brands fa-facebook-square'></i>
+            </a>
+            <a href='/'>
+              <i className='fa-brands fa-instagram-square'></i>
+            </a>
+            <a href='/'>
+              <i className='fa-brands fa-whatsapp-square'></i>
+            </a>
+            <a href='/'>
+              <i className='fa-brands fa-twitter-square'></i>
+            </a>       
+          </div>          
+          </div>
+          <div className='bottom'>
+            <div>
+              <h4>Site</h4>
+              <a href='/'>Changelog</a>
+              <a href='/'>Status</a>
+              <a href='/'>License</a>
+              <a href='/'>All Versions</a>
+            </div>
+            <div>
+              <h4>Community</h4>
+              <a href='/'>Instagram</a>
+              <a href='/'>Issues</a>
+              <a href='/'>WhatsApp</a>
+              <a href='/'>Twitter</a>
+            </div>
+            <div>
+              <h4>Help</h4>
+              <a href='/'>Changelog</a>
+              <a href='/'>Status</a>
+              <a href='/'>License</a>
+              <a href='/'>All Versions</a>
+            </div>
+            <div>
+              <h4>Others</h4>
+              <a href='/'>Terms Of Service</a>
+              <a href='/'>Privacy</a>
+              <a href='/'>Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     </section>
 

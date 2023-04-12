@@ -70,6 +70,8 @@ const Login = () => {
                                     <input value={values.password} onChange={handleChange} id="password" type="password" className='form-control' />
                                 
                                     <button className='btn btn-secondary mt-5'>Login Now</button>
+                                    <p></p>
+                                    <p>Don't have an account? <a href='signup'>Sign Up</a></p>
 
                                 </form>
                             )}
