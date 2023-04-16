@@ -144,7 +144,7 @@ const Templates = () => {
                 </div>
                 
                 <div class="card-body">
-                    <img class="card-img" src="https://play-lh.googleusercontent.com/36szRvmqeewn6fxpx9V88zhpPU3c84Im9zjAFPZl-cReiztnAD6cn0jSnWBGsNNdPsU"></img>                    
+                    <img class="card-img" src="https://image.winudf.com/v2/image1/Y29tLnRhc2subm90ZXNfaWNvbl8xNjQzMTE5ODgyXzAzOQ/icon.png?w=&fakeurl=1"></img>                    
                     <h4>Notes Only</h4>
                     <button class="btn btn-secondary"><a class="text-reset me-3" href="temp8_NP">
                         <i class="fa fa-pencil" aria-hidden="true"></i>   Use Now   
