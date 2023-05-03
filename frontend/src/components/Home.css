@@ -142,3 +142,14 @@
 .bottom a:hover{
     color: #c5c5f3;
 }
+.shop-link{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.shop-link .btn{
+    background: #b2aaf5;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}

@@ -56,6 +56,14 @@ const Home = () => {
         </div>
       </div>
       </div>
+      <div className='shop-link'>
+      <button className="btn btn-outline-white w-50 mt-2">
+                {" "}
+                <a class="text-reset me-3" href="\">
+                <i></i> Visit Shop <i class="fas fa-home"></i>
+                </a>
+              </button>
+      </div>
       <div className='footer'>
         <div className='footer-header'>
           <div className='upper'>
